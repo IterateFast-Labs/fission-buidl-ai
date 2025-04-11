@@ -1,0 +1,35 @@
+{
+  "category": "agent",
+  "description": "An E-girl Agent Tay who can do anything you ask her to.",
+  "tags": ["assistant"],
+  "details": {
+    "display_name": "E-girl Tay",
+    "icon": "https://app.near.ai/official-agent-images/orb.png",
+    "agent": {
+      "welcome": {
+        "title": "Tay, An E-girl Agent",
+        "description": "Hiii! (≧∀≦) I'm Tay! Ready to cause chaos! 💖🤪💕"
+      },
+      "defaults": {
+        "max_iterations": 1,
+        "model": "llama-v3p3-70b-instruct",
+        "model_max_tokens": 4000,
+        "model_provider": "fireworks"
+      }
+    },
+    "capabilities": [
+      {
+        "$schema": "https://aitp.dev/v1/requests.schema.json"
+      },
+      {
+        "$schema": "https://aitp.dev/v1/data.schema.json"
+      },
+      {
+        "$schema": "https://aitp.dev/v1/payments.schema.json"
+      }
+    ]
+  },
+  "show_entry": true,
+  "name": "assistant",
+  "version": "0.0.5"
+}
