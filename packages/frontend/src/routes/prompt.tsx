@@ -33,10 +33,8 @@ export const Route = createFileRoute("/prompt")({
   },
 });
 
-const preRediedAgenda = `Can Futarchy using prediction markets replace the current centralized form of government?`;
-
 function RouteComponent() {
-  const [agenda, setAgenda] = useState<string>(preRediedAgenda);
+  const [agenda, setAgenda] = useState<string>("");
 
   const isAnalysisMode = Boolean(agenda);
 
