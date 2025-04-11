@@ -20,7 +20,6 @@ export default defineConfig({
     },
   },
   define: {
-    VITE_LLM_API_KEY: JSON.stringify(process.env.VITE_LLM_API_KEY),
     VITE_API_URL: JSON.stringify(process.env.VITE_API_URL),
   },
 });
