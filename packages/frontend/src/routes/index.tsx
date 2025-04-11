@@ -1,5 +1,5 @@
 import { Passcode } from "@/components/passcode";
-import { sessionStorageKey } from "@/lib/passcode";
+import { setPasscode } from "@/lib/passcode";
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -13,8 +13,7 @@ function RouteComponent() {
       <Passcode
         className="mx-auto"
         onSuccessValidation={(passcode) => {
-          alert("Passcode validated successfully!");
-          sessionStorage.setItem(sessionStorageKey, passcode);
+          setPasscode(passcode);
           router.navigate({
             to: "/prompt",
           });
