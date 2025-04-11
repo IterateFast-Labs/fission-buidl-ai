@@ -45,6 +45,7 @@ export default function AgendaForm({
         </div>
         <Textarea
           ref={textAreaRef}
+          name="agenda"
           autoFocus
           className="border-0 bg-transparent! resize-none w-full p-2!"
           placeholder="Enter agenda here"

@@ -1,6 +1,8 @@
 import AgendaForm from "@/components/agenda-form";
+import Analysis from "@/components/analysis";
 import { getPasscode, verifyPasscode } from "@/lib/passcode";
 import { createFileRoute, redirect } from "@tanstack/react-router";
+import { useState } from "react";
 
 export const Route = createFileRoute("/prompt")({
   component: RouteComponent,
@@ -31,11 +33,23 @@ export const Route = createFileRoute("/prompt")({
   },
 });
 
+const preRediedAgenda = `Can Futarchy using prediction markets replace the current centralized form of government?`;
+
 function RouteComponent() {
+  const [agenda, setAgenda] = useState<string>(preRediedAgenda);
+
+  const isAnalysisMode = Boolean(agenda);
+
   return (
     <div className="flex flex-col justify-center min-h-[calc(100vh_-_48px)]">
-      <AgendaForm />
-      {/* <Frame /> */}
+      {!isAnalysisMode && (
+        <AgendaForm
+          onSubmit={(agenda) => {
+            setAgenda(agenda);
+          }}
+        />
+      )}
+      {isAnalysisMode && <Analysis agenda={agenda} />}
     </div>
   );
 }

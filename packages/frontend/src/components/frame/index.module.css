@@ -1,5 +1,5 @@
 .bubbleBorder {
-  border: 20px solid;
+  border: 16px solid;
   border-image: url(/frame/bubble-border.svg) 8;
   image-rendering: pixelated;
 }
