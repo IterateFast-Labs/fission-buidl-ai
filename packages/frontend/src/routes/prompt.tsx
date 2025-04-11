@@ -1,5 +1,4 @@
 import AgendaForm from "@/components/agenda-form";
-import Frame from "@/components/frame";
 import { getPasscode, verifyPasscode } from "@/lib/passcode";
 import { createFileRoute, redirect } from "@tanstack/react-router";
 
@@ -34,9 +33,9 @@ export const Route = createFileRoute("/prompt")({
 
 function RouteComponent() {
   return (
-    <div className="flex flex-col min-h-[calc(100vh_-_48px)] gap-4">
-      <Frame className="flex-grow" />
+    <div className="flex flex-col justify-center min-h-[calc(100vh_-_48px)]">
       <AgendaForm />
+      {/* <Frame /> */}
     </div>
   );
 }

@@ -16,6 +16,7 @@
 @theme {
   --color-primary: hsla(236, 86%, 22%, 1);
   --color-material: hsla(0, 0%, 78%, 1);
+  --color-material-light: hsla(0, 0%, 85%, 1);
   --color-console: hsla(109, 100%, 50%, 1);
 
   --font-sans: "UnifontExMono", sans-serif;

@@ -4,22 +4,39 @@ import Textarea from "./ui/textarea";
 import { Typing } from "./ui/typing";
 import { Button } from "./ui/button";
 
-export default function AgendaForm() {
+export default function AgendaForm({
+  onSubmit,
+}: {
+  onSubmit?: (agenda: string) => void;
+}) {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleInput = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     // 높이 자동 조절
-    const maxHeight = 180;
+    const maxHeight = 320;
     const target = event.currentTarget;
 
     target.style.height = "auto";
     target.style.height = `${Math.min(target.scrollHeight, maxHeight)}px`;
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const agenda = formData.get("agenda") as string;
+
+    if (!agenda || agenda.trim() === "") {
+      return;
+    }
+
+    onSubmit?.(agenda);
+  };
+
   return (
-    <Box className="bg-primary p-0 border-white *:text-white">
-      <form className="p-2 space-y-0.5">
-        <div className="py-1">
+    <Box>
+      <form className="space-y-2" onSubmit={handleSubmit}>
+        <div className="py-1 text-base tracking-tight">
           SYSTEM &gt; {/* 분석하고 싶은 Agenda를 입력하세요 */}
           <Typing
             text="Please enter the agenda you want to analyze"

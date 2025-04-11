@@ -1,4 +1,4 @@
-import { cn } from '@/lib/tailwind-util';
+import { cn } from "@/lib/tailwind-util";
 
 export interface BoxProps {
   as?: React.ElementType;
@@ -9,13 +9,13 @@ export interface BoxProps {
 }
 
 export function Box(props: BoxProps) {
-  const Element = props.as || 'div';
+  const Element = props.as || "div";
 
   return (
     <Element
       ref={props.ref}
       className={cn([
-        'relative p-4 border-[6px] border-double border-primary/60 bg-material',
+        "relative p-4 border-[6px] border-double border-primary/60 bg-material-light",
         props.className,
       ])}
     >
