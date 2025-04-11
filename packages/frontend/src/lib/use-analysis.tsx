@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { fetcher } from "./fetcher";
 
 export async function doInitialAnalysis(agenda: string) {
@@ -56,10 +56,13 @@ export async function doDecisionAnalysis({
   return result;
 }
 
-export function useInitialAnalysis() {
-  return useMutation({
-    mutationKey: ["analysis", "initial"],
-    mutationFn: doInitialAnalysis,
+export function useInitialAnalysis({ agenda }: { agenda: string }) {
+  return useQuery({
+    queryKey: ["analysis", "initial", agenda],
+    // mutationFn: doInitialAnalysis,
+    queryFn: () => doInitialAnalysis(agenda),
+    enabled: !!agenda,
+    refetchOnWindowFocus: false,
   });
 }
 

@@ -49,7 +49,7 @@ function RouteComponent() {
           }}
         />
       )}
-      {isAnalysisMode && <Analysis agenda={agenda} />}
+      {isAnalysisMode && <Analysis agenda={agenda} setAgenda={setAgenda} />}
     </div>
   );
 }

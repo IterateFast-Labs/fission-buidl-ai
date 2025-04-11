@@ -63,4 +63,8 @@
   .justify-center {
     justify-content: safe center;
   }
+
+  .justify-end {
+    justify-content: safe end;
+  }
 }

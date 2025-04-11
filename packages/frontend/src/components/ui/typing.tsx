@@ -1,5 +1,5 @@
 // Typing.tsx
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 interface TypingProps {
   text: React.ReactNode;
@@ -9,12 +9,12 @@ interface TypingProps {
 }
 
 function flattenText(node: React.ReactNode): string {
-  if (typeof node === 'string' || typeof node === 'number') {
+  if (typeof node === "string" || typeof node === "number") {
     return String(node);
   }
 
   if (Array.isArray(node)) {
-    return node.map(flattenText).join('');
+    return node.map(flattenText).join("");
   }
 
   if (React.isValidElement(node)) {
@@ -22,18 +22,18 @@ function flattenText(node: React.ReactNode): string {
     return flattenText((node.props as any).children);
   }
 
-  return '';
+  return "";
 }
 
 export const Typing: React.FC<TypingProps> = ({
   enableTypingEffect = true,
   text,
-  delayPerChar = 0.02,
+  delayPerChar = 0.005,
   className,
 }) => {
   const fullText = flattenText(text); // ReactNode → string
   const [visibleLength, setVisibleLength] = useState(
-    enableTypingEffect ? 0 : fullText.length,
+    enableTypingEffect ? 0 : fullText.length
   );
   const endRef = useRef<HTMLDivElement | null>(null);
 
@@ -55,7 +55,7 @@ export const Typing: React.FC<TypingProps> = ({
 
       // 스크롤 처리
       requestAnimationFrame(() => {
-        endRef.current?.scrollIntoView({ behavior: 'instant' });
+        endRef.current?.scrollIntoView({ behavior: "instant" });
       });
     }, delayPerChar * 1000);
 
