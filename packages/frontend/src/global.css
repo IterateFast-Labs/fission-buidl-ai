@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'UnifontExMono';
+  src: url('https://stgiga.github.io/UnifontEX/UnifontExMono.eot');
+  src:
+    url('https://stgiga.github.io/UnifontEX/UnifontExMono.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://stgiga.github.io/UnifontEX/UnifontExMono.woff') format('woff'),
+    url('https://stgiga.github.io/UnifontEX/UnifontExMono.ttf')
+      format('truetype'),
+    url('https://stgiga.github.io/UnifontEX/UnifontExMono.svg#UnifontExMono')
+      format('svg');
+  font-weight: normal;
+}
+
+@theme {
+  --color-primary: hsla(236, 86%, 22%, 1);
+  --color-material: hsla(0, 0%, 78%, 1);
+  --color-console: hsla(109, 100%, 50%, 1);
+
+  --font-sans: 'UnifontExMono', sans-serif;
+  --font-mono: 'UnifontExMono', sans-serif;
+}
+
+@layer base {
+  body {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: none;
+    background-color: var(--color-material);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-material);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-console);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+
+  .font-bold {
+    text-shadow: 1px 0px 0px;
+  }
+
+  .font-extrabold {
+    text-shadow:
+      -1px 0px 0px,
+      1px 0px 0px,
+      0px -0.5px 0px,
+      0px 0.5px 0px;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
