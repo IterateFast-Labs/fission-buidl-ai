@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "frontend": "pnpm --filter @fission-buidl-ai/frontend"
+    "frontend": "pnpm --filter @fission-buidl-ai/frontend",
+    "backend": "pnpm --filter @fission-buidl-ai/backend"
   },
   "keywords": [],
   "author": "",
