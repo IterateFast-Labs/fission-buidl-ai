@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "frontend": "pnpm --filter @fission-buidl-ai/frontend",
-    "backend": "pnpm --filter @fission-buidl-ai/backend"
+    "backend": "pnpm --filter @fission-buidl-ai/backend",
+    "mpc": "pnpm --filter @fission-buidl-ai/pin-ai-mpc"
   },
   "keywords": [],
   "author": "",
