@@ -96,23 +96,6 @@ By deploying on the **PIN Agent Registry** and connecting to user-specific endpo
     - The user receives a detailed itinerary plus a chain-of-thought log explaining how the agent arrived at that plan.
     - On-chain records confirm a successful transaction, with the agent’s usage documented in the PIN registry for future references or user reviews.
 
-## Demo Video
-
-```bash
-python scripts/register_agent.py --registry <BaseSepoliaAddress> --agent-name "Fission_AI"
-```
-
-This interacts with the agent registry contract at [0xD2004b20B39A6b4397df87dadDaEFB0aEfe32089](https://sepolia.basescan.org/address/0xD2004b20B39A6b4397df87dadDaEFB0aEfe32089) to finalize on-chain registration.
-
-```bash
-npm install
-pip install pinai-agent-sdk
-```
-
-> Ensure you have Python 3.9+ and Node.js installed.
-> 
-- We provide a **3–5 minute demo** showing how a user’s personal AI triggers a request to Fission, the agent’s decision-making with personal data, and a final on-chain or real-world action (e.g., placing an order, confirming a booking).
-
 ---
 
 ## Additional Resources
